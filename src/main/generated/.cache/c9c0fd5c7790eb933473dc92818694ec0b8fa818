@@ -1,0 +1,5 @@
+// 1.21	2026-06-19T22:47:47.934998113	Backrooms/Tags for minecraft:block
+ecf455e4529b0524f01cb390e46a3c14ea066409 data/minecraft/tags/block/mineable/axe.json
+6c7ad56d87c3317665517fcb7dbf66fe35d59fea data/minecraft/tags/block/mineable/hoe.json
+98154c0643c6596f44f273a2e1c998a26fea71b4 data/minecraft/tags/block/needs_stone_tool.json
+98154c0643c6596f44f273a2e1c998a26fea71b4 data/minecraft/tags/block/mineable/pickaxe.json

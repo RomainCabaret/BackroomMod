@@ -1,0 +1,10 @@
+{
+  "type": "backrooms:level_0_debug",
+  "generator": {
+    "type": "backrooms:backrooms_debug_chunk_generator",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "minecraft:the_void"
+    }
+  }
+}
