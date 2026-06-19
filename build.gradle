@@ -109,3 +109,7 @@ sourceSets {
 		}
 	}
 }
+
+sourcesJar {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
