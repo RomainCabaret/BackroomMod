@@ -18,6 +18,8 @@ public class ModFrenchLangProvider extends FabricLanguageProvider {
         builder.add(ModBlocks.PAPIER_PEINT, "Papier Peint Jauni");
         builder.add(ModBlocks.PLAFOND_BUREAU, "Dalle de Faux Plafond");
 
+        builder.add(ModBlocks.PLAFOND_LUMINEUX, "Néon de Faux Plafond");
+
         // Tu peux aussi traduire tes commandes ou messages d'erreur ici
         builder.add("itemGroup.backrooms", "Les Backrooms");
     }

@@ -1,10 +1,13 @@
-// 1.21	2026-06-19T22:47:47.935258658	Backrooms/Model Definitions
-4271252031aa645ccf99d50a635a2f65b5b7d4ad assets/backrooms/models/item/plafond_bureau.json
-c353986216e534fb8a4b43685890f27957e27c58 assets/backrooms/models/block/moquette_humide.json
+// 1.21	2026-06-20T11:56:25.115921404	Backrooms/Model Definitions
 1b6b1026de58c79b2f92ee96029ec3c3d7a5195d assets/backrooms/models/item/moquette_humide.json
 6019fac1c82cff96bbfee47705beb006255a730e assets/backrooms/models/block/plafond_bureau.json
-2129be6806b13ba0aa2066395624ca620354e050 assets/backrooms/models/block/papier_peint.json
-a414137621120d6ca72f17c4b3404d648466d51f assets/backrooms/blockstates/moquette_humide.json
 c474e69b51190c83893e63db6cf972ff3e8bd5f9 assets/backrooms/models/item/papier_peint.json
+a414137621120d6ca72f17c4b3404d648466d51f assets/backrooms/blockstates/moquette_humide.json
 5ea5ccb313a9d5277dd64703c887794d5c2f9465 assets/backrooms/blockstates/plafond_bureau.json
 23c742f14989d259c7b00b4c350634a7a88673c8 assets/backrooms/blockstates/papier_peint.json
+4271252031aa645ccf99d50a635a2f65b5b7d4ad assets/backrooms/models/item/plafond_bureau.json
+c353986216e534fb8a4b43685890f27957e27c58 assets/backrooms/models/block/moquette_humide.json
+9626309d348d5f840b9315717900574e99ee3b74 assets/backrooms/models/item/plafond_lumineux.json
+6a45563d16ba4aca8c010ad4a326508120378677 assets/backrooms/models/block/plafond_lumineux.json
+8987e125c95ad2ae898a4f1cca6ffc96a17e130d assets/backrooms/blockstates/plafond_lumineux.json
+2129be6806b13ba0aa2066395624ca620354e050 assets/backrooms/models/block/papier_peint.json

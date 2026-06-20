@@ -21,6 +21,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE).add(ModBlocks.MOQUETTE_HUMIDE);
 
         // On exige un palier minimum : pioche en pierre obligatoire pour récolter le plafond
-        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.PLAFOND_BUREAU);
+        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.PLAFOND_BUREAU)
+                .add(ModBlocks.PLAFOND_LUMINEUX);
     }
 }

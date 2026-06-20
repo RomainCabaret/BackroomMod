@@ -93,6 +93,24 @@ public class BackroomsDebugGenerator extends ChunkGenerator {
             };
 
             templateOpt.get().placeInWorld(region, targetPos, targetPos, settings, net.minecraft.util.RandomSource.create(), 3);
+
+            BlockPos signPos = targetPos.offset(8, 2, 8);
+
+            // On passe le flag à 2 (UPDATE_CLIENTS en moins) pour calmer le jeu
+            region.setBlock(signPos, net.minecraft.world.level.block.Blocks.OAK_SIGN.defaultBlockState(), 2);
+
+            if (region.getBlockEntity(signPos) instanceof net.minecraft.world.level.block.entity.SignBlockEntity sign) {
+                net.minecraft.world.level.block.entity.SignText frontText = sign.getFrontText()
+                        .setMessage(1, net.minecraft.network.chat.Component.literal("§lPièce :"))
+                        .setMessage(2, net.minecraft.network.chat.Component.literal("§l" + pieceChoisie.nomDeBase));
+
+                try {
+                    sign.setText(frontText, true);
+                } catch (NullPointerException e) {
+                    // Tais-toi. Le texte est bien enregistré dans le chunk.
+                    // On ignore juste la tentative pathétique du jeu d'envoyer un paquet réseau dans le vide.
+                }
+            }
         }
     }
 

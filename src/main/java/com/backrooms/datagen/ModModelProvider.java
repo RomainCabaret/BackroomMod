@@ -24,6 +24,7 @@ public class ModModelProvider extends FabricModelProvider {
         // Même chose pour ton plafond. Le modèle restera un cube basique visuellement,
         // (les collisions custom gérées en Java fonctionneront toujours).
         blockStateModelGenerator.createTrivialCube(ModBlocks.PLAFOND_BUREAU);
+        blockStateModelGenerator.createTrivialCube(ModBlocks.PLAFOND_LUMINEUX);
     }
 
     @Override

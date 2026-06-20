@@ -70,7 +70,7 @@ public class BackroomsStructures {
     public static final List<Megastructure> CATALOGUE_MEGASTRUCTURES = new ArrayList<>();
 
     private static final Pattern PATTERN_STRUCTURE = Pattern.compile(
-            "(.+)_(\\d+)_(\\d+)_(\\d+)_n_([a-z0-9-]+)_s_([a-z0-9-]+)_e_([a-z0-9-]+)_o_([a-z0-9-]+)"
+            "(.+)_(\\d+)_(\\d+)_(\\d+)_n_([a-z0-9-]+)_s_([a-z0-9-]+)_e_([a-z0-9-]+)_o_([a-z0-9-]+)(?:_v\\d+)?"
     );
 
     public static void chargerStructuresDynamiques(net.minecraft.server.MinecraftServer server) {

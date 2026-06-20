@@ -19,6 +19,8 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         builder.add(ModBlocks.PAPIER_PEINT, "Yellowed Wallpaper");
         builder.add(ModBlocks.PLAFOND_BUREAU, "Office Ceiling Tile");
 
+        builder.add(ModBlocks.PLAFOND_LUMINEUX, "Office Ceiling Light");
+
         builder.add("itemGroup.backrooms", "The Backrooms");
     }
 }

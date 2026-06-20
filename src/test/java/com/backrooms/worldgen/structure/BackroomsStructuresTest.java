@@ -52,7 +52,7 @@ public class BackroomsStructuresTest {
      */
     @Test
     void testRegexNommage() {
-        String regex = ".+_\\d+_\\d+_\\d+_n_[a-z0-9-]+_s_[a-z0-9-]+_e_[a-z0-9-]+_o_[a-z0-9-]+";
+        String regex = "(.+)_(\\d+)_(\\d+)_(\\d+)_n_([a-z0-9-]+)_s_([a-z0-9-]+)_e_([a-z0-9-]+)_o_([a-z0-9-]+)(?:_v\\d+)?";
 
         String validName = "open_void_bigpillar_0_0_0_n_open_s_open_e_open_o_0";
         assertTrue(validName.matches(regex), "The regex must accept a perfectly formatted NBT filename.");

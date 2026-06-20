@@ -1,0 +1,74 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "texture": "backrooms:block/plafond_lumineux",
+    "particle": "backrooms:block/plafond_lumineux"
+  },
+  "elements": [
+    {
+      "name": "Bordure_Nord",
+      "from": [0, 0, 0],
+      "to": [16, 16, 1],
+      "faces": {
+        "down": {"uv": [0, 0, 16, 1], "texture": "#texture"},
+        "up": {"uv": [0, 0, 16, 1], "texture": "#texture"},
+        "north": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+        "south": {"uv": [0, 15, 16, 16], "texture": "#texture"},
+        "west": {"uv": [0, 0, 1, 16], "texture": "#texture"},
+        "east": {"uv": [15, 0, 16, 16], "texture": "#texture"}
+      }
+    },
+    {
+      "name": "Bordure_Sud",
+      "from": [0, 0, 15],
+      "to": [16, 16, 16],
+      "faces": {
+        "down": {"uv": [0, 15, 16, 16], "texture": "#texture"},
+        "up": {"uv": [0, 15, 16, 16], "texture": "#texture"},
+        "north": {"uv": [0, 15, 16, 16], "texture": "#texture"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+        "west": {"uv": [15, 0, 16, 16], "texture": "#texture"},
+        "east": {"uv": [0, 0, 1, 16], "texture": "#texture"}
+      }
+    },
+    {
+      "name": "Bordure_Ouest",
+      "from": [0, 0, 1],
+      "to": [1, 16, 15],
+      "faces": {
+        "down": {"uv": [0, 1, 1, 15], "texture": "#texture"},
+        "up": {"uv": [0, 1, 1, 15], "texture": "#texture"},
+        "north": {"uv": [0, 0, 1, 16], "texture": "#texture"},
+        "south": {"uv": [15, 0, 16, 16], "texture": "#texture"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#texture"}
+      }
+    },
+    {
+      "name": "Bordure_Est",
+      "from": [15, 0, 1],
+      "to": [16, 16, 15],
+      "faces": {
+        "down": {"uv": [15, 1, 16, 15], "texture": "#texture"},
+        "up": {"uv": [15, 1, 16, 15], "texture": "#texture"},
+        "north": {"uv": [15, 0, 16, 16], "texture": "#texture"},
+        "south": {"uv": [0, 0, 1, 16], "texture": "#texture"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#texture"}
+      }
+    },
+    {
+      "name": "Fond_Creux",
+      "from": [1, 1, 1],
+      "to": [15, 16, 15],
+      "faces": {
+        "down": {"uv": [1, 1, 15, 15], "texture": "#texture"},
+        "up": {"uv": [1, 1, 15, 15], "texture": "#texture"},
+        "north": {"uv": [1, 0, 15, 15], "texture": "#texture"},
+        "south": {"uv": [1, 0, 15, 15], "texture": "#texture"},
+        "west": {"uv": [1, 0, 15, 15], "texture": "#texture"},
+        "east": {"uv": [1, 0, 15, 15], "texture": "#texture"}
+      }
+    }
+  ]
+}

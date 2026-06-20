@@ -23,13 +23,39 @@ Un générateur de dimension procédurale pour Minecraft (Fabric 1.21). Ce mod n
 * **Plafond de Bureau :** Hitbox 3D creusée sur mesure pour un rendu réaliste des dalles de faux plafond.
 * **Moquette Humide & Papier Peint :** Intégration complète avec les outils du jeu (Tags de minage spécifiques générés dynamiquement).
 
-### 🛠️ Outils de Développement & Commandes
-Une suite d'outils in-game pour cartographier et débugger la génération :
-* `/map_backrooms <rayon>` : Exporte une carte PNG topographique de la dimension.
-* `/locate_mega <nom>` : Radar algorithmique pointant vers la mégastructure la plus proche.
-* `/place_mega <nom>` : Assemble instantanément une mégastructure via les NBT.
-* `/slice_room <nom> <x> <y> <z>` : Découpe l'environnement et génère les fichiers `.nbt` automatiquement.
-* `/tpdim <dimension>` : Téléportation sécurisée (Y=72) inter-dimensions.
+## 💻 Commandes Administrateur & Outils de Dev
+
+Ce mod embarque une suite de commandes sur mesure pour manipuler la génération procédurale, tester les structures et débugger l'environnement sans avoir à charger des millions de chunks.
+
+### `/tpdim <dimension>`
+* **Description :** Téléportation inter-dimensionnelle de sécurité.
+* **Comportement :** Au lieu de vous lâcher aléatoirement, la commande force l'atterrissage à la coordonnée `Y=72`. Cela évite de réapparaître au-dessus du plafond de bedrock ou de tomber dans le vide lors des tests de génération.
+
+### `/map_backrooms <rayon>`
+* **Description :** Scanner topographique.
+* **Comportement :** Génère et exporte une image PNG dans le dossier du jeu. Elle cartographie la zone autour du joueur de manière algorithmique (sans générer les blocs en jeu).
+* **Code couleur :**
+    * ⬜ Blanc : Open-Spaces.
+    * ⬛ Noir : Labyrinthes (Mazes).
+    * 🟥 Rouge : Emplacements des Mégastructures.
+
+### `/locate_mega <nom_structure>`
+* **Description :** Radar mathématique.
+* **Comportement :** Calcule la position de la mégastructure demandée la plus proche en interrogeant directement le `MegaManager`. L'opération est instantanée car elle repose sur la seed et le bruit procédural, sans charger les chunks.
+
+### `/place_mega <nom_structure>`
+* **Description :** Moteur d'assemblage manuel.
+* **Comportement :** Instancie la structure NBT ciblée directement aux coordonnées actuelles du joueur. Calcule automatiquement l'enfoncement en Y selon le nombre d'étages de la structure. Parfait pour tester l'éclairage et l'agencement sans explorer.
+### `/slice_room <nom> [taille_x taille_y taille_z]`
+* **Description :** L'outil de génération de Mégastructures par excellence. Il découpe une zone de l'Overworld, analyse ses bordures intelligemment, et génère les fichiers `.nbt` compressés prêts à être injectés dans le mod.
+* **Mécanique d'analyse :**
+    * **Grille de découpe :** Divise la zone en sous-matrices de 16x8x16 blocs, en s'alignant automatiquement sur un multiple de Y=8.
+    * **Raycasting des bordures :** La commande scanne les blocs de chaque face (Nord, Sud, Est, Ouest) pour générer la signature de connexion :
+        * 🪟 **Verre (`Blocks.GLASS`) :** Force une ouverture totale de la face (signature `open`).
+        * 🪨 **Bedrock (`Blocks.BEDROCK`) :** Marque les coordonnées exactes comme point de passage (ex: signature `7x1-8x1` pour une double porte).
+        * 🧱 **Rien :** Mur plein, aucun passage (signature `0`).
+    * **Nettoyage automatique :** Les blocs de balisage (Verre et Bedrock) sont effacés et remplacés par de l'air avant l'exportation pour ne pas polluer la structure finale.
+    * **Exportation typée :** Sauvegarde le fichier directement dans `generated/backrooms/structures/` avec le format de nommage strict attendu par le routeur, par exemple : `poolroom_0_0_0_n_open_s_0_e_7x1-8x1_o_0.nbt`.
 
 ## 🏗️ Architecture & Code Standard
 
