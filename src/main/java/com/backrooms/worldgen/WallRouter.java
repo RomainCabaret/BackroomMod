@@ -5,6 +5,7 @@ import com.backrooms.worldgen.structure.BackroomsStructures;
 public class WallRouter {
 
     public static String getEdge(int x1, int z1, int x2, int z2, long seed) {
+        // 1. Priorité absolue aux Mégastructures
         MegaManager.MegaHit megaVoisin = MegaManager.check(x2, z2, seed);
         if (megaVoisin != null) {
             int rezDeChaussee = megaVoisin.mega().tailleY - 1;
@@ -25,10 +26,12 @@ public class WallRouter {
         LayoutProvider.Zone zone1 = LayoutProvider.getZone(x1, z1, seed);
         LayoutProvider.Zone zone2 = LayoutProvider.getZone(x2, z2, seed);
 
+        // 2. OPEN <-> OPEN : On ouvre en grand
         if (zone1 == LayoutProvider.Zone.OPEN && zone2 == LayoutProvider.Zone.OPEN) {
             return "open";
         }
 
+        // 3. MAZE <-> MAZE : Ton algorithme de labyrinthe garanti sans culs-de-sac
         if (zone1 == LayoutProvider.Zone.MAZE && zone2 == LayoutProvider.Zone.MAZE) {
             int minX = Math.min(x1, x2);
             int maxX = Math.max(x1, x2);
@@ -48,7 +51,12 @@ public class WallRouter {
             return edgeRand.nextFloat() < 0.35f ? "7x1-8x1-7x2-8x2" : "0";
         }
 
-        return "7x1-8x1-7x2-8x2";
+        // 4. OPEN <-> MAZE : La nouvelle connexion (Salles de transition)
+        // 50% de chance d'avoir une porte qui donne sur l'open space, sinon un mur plein
+        long transitionHash = seed ^ ((x1 + x2) * 81347L) ^ ((z1 + z2) * 4307L);
+        net.minecraft.util.RandomSource transitionRand = net.minecraft.util.RandomSource.create(transitionHash);
+
+        return transitionRand.nextFloat() < 0.5f ? "7x1-8x1-7x2-8x2" : "0";
     }
 
     private static String extraireSignature(String nomFichier, String face) {
