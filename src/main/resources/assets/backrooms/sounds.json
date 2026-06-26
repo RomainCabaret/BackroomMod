@@ -1,0 +1,10 @@
+{
+  "neon_hum": {
+    "sounds": [
+      {
+        "name": "backrooms:neon_hum",
+        "stream": false
+      }
+    ]
+  }
+}

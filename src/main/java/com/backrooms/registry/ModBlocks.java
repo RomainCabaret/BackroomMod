@@ -1,6 +1,7 @@
 package com.backrooms.registry;
 
 import com.backrooms.Backrooms;
+import com.backrooms.block.AbyssalPitBlock;
 import com.backrooms.block.PlafondBureauBlock;
 import com.backrooms.block.PlafondLumineuxBlock;
 import net.minecraft.core.Registry;
@@ -17,6 +18,8 @@ public class ModBlocks {
 
     public static final Block PLAFOND_BUREAU = new PlafondBureauBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
 
+    public static final Block ABYSSAL_PIT = new AbyssalPitBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).noCollission().noOcclusion());
+
     public static final Block PLAFOND_LUMINEUX = new PlafondLumineuxBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lightLevel(state -> 15)
     );
@@ -25,5 +28,6 @@ public class ModBlocks {
         Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(Backrooms.MOD_ID, "papier_peint"), PAPIER_PEINT);
         Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(Backrooms.MOD_ID, "plafond_bureau"), PLAFOND_BUREAU);
         Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(Backrooms.MOD_ID, "plafond_lumineux"), PLAFOND_LUMINEUX);
+        Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(Backrooms.MOD_ID, "abyssal_pit"), ABYSSAL_PIT);
     }
 }

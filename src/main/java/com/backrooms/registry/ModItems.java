@@ -16,12 +16,14 @@ public class ModItems {
         registerBlockItem("papier_peint", ModBlocks.PAPIER_PEINT);
         registerBlockItem("plafond_bureau", ModBlocks.PLAFOND_BUREAU);
         registerBlockItem("plafond_lumineux", ModBlocks.PLAFOND_LUMINEUX);
+        registerBlockItem("abyssal_pit", ModBlocks.ABYSSAL_PIT);
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(content -> {
             content.accept(ModBlocks.MOQUETTE_HUMIDE);
             content.accept(ModBlocks.PAPIER_PEINT);
             content.accept(ModBlocks.PLAFOND_BUREAU);
             content.accept(ModBlocks.PLAFOND_LUMINEUX);
+            content.accept(ModBlocks.ABYSSAL_PIT);
         });
     }
 

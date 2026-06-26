@@ -20,6 +20,7 @@ public class ModModelProvider extends FabricModelProvider {
         // 3. Le fichier models/item/moquette_humide.json
         blockStateModelGenerator.createTrivialCube(ModBlocks.MOQUETTE_HUMIDE);
         blockStateModelGenerator.createTrivialCube(ModBlocks.PAPIER_PEINT);
+        blockStateModelGenerator.createTrivialCube(ModBlocks.ABYSSAL_PIT);
 
         // Même chose pour ton plafond. Le modèle restera un cube basique visuellement,
         // (les collisions custom gérées en Java fonctionneront toujours).

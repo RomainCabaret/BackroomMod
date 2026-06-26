@@ -1,9 +1,6 @@
 package com.backrooms;
 
-import com.backrooms.registry.ModBlocks;
-import com.backrooms.registry.ModCommands;
-import com.backrooms.registry.ModItems;
-import com.backrooms.registry.ModWorldGen;
+import com.backrooms.registry.*;
 import com.backrooms.worldgen.structure.BackroomsStructures;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -21,6 +18,7 @@ public class Backrooms implements ModInitializer {
 		ModItems.register();
 		ModCommands.register();
 		ModWorldGen.register();
+		ModSounds.register();
 
 		net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.SERVER_STARTING.register(BackroomsStructures::chargerStructuresDynamiques);
 	}
