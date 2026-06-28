@@ -23,11 +23,16 @@ public class ModBlocks {
     public static final Block PLAFOND_LUMINEUX = new PlafondLumineuxBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lightLevel(state -> 15)
     );
+    public static final Block PLAFOND_LUMINEUX_ROUGE = new PlafondLumineuxBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).lightLevel(state -> 15)
+    );
+
     public static void register() {
         Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(Backrooms.MOD_ID, "moquette_humide"), MOQUETTE_HUMIDE);
         Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(Backrooms.MOD_ID, "papier_peint"), PAPIER_PEINT);
         Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(Backrooms.MOD_ID, "plafond_bureau"), PLAFOND_BUREAU);
         Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(Backrooms.MOD_ID, "plafond_lumineux"), PLAFOND_LUMINEUX);
         Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(Backrooms.MOD_ID, "abyssal_pit"), ABYSSAL_PIT);
+        Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(Backrooms.MOD_ID, "plafond_lumineux_rouge"), PLAFOND_LUMINEUX_ROUGE);
     }
 }

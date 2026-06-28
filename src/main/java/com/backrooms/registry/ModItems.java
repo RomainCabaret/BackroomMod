@@ -17,6 +17,7 @@ public class ModItems {
         registerBlockItem("plafond_bureau", ModBlocks.PLAFOND_BUREAU);
         registerBlockItem("plafond_lumineux", ModBlocks.PLAFOND_LUMINEUX);
         registerBlockItem("abyssal_pit", ModBlocks.ABYSSAL_PIT);
+        registerBlockItem("plafond_lumineux_rouge", ModBlocks.PLAFOND_LUMINEUX_ROUGE);
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(content -> {
             content.accept(ModBlocks.MOQUETTE_HUMIDE);
@@ -24,6 +25,7 @@ public class ModItems {
             content.accept(ModBlocks.PLAFOND_BUREAU);
             content.accept(ModBlocks.PLAFOND_LUMINEUX);
             content.accept(ModBlocks.ABYSSAL_PIT);
+            content.accept(ModBlocks.PLAFOND_LUMINEUX_ROUGE);
         });
     }
 

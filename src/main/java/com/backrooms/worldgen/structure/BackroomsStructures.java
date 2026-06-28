@@ -4,10 +4,7 @@ import com.backrooms.Backrooms;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Rotation;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -135,6 +132,7 @@ public class BackroomsStructures {
                     CATALOGUE_NIVEAU_0.add(new ModuleInfo(id, nom, ix, iy, iz, originale.sigE, originale.sigO, originale.sigS, originale.sigN, Rotation.COUNTERCLOCKWISE_90));
                 }
             }
+            dumpUniqueRoomVariantsReport(CATALOGUE_NIVEAU_0);
 
         } catch (Exception e) {
             Backrooms.LOGGER.error("[Backrooms-Radar] 💥 Crash pendant le chargement : ", e);
@@ -156,5 +154,26 @@ public class BackroomsStructures {
         }
 
         return compatibles;
+    }
+    public static void dumpUniqueRoomVariantsReport(List<ModuleInfo> catalogue) {
+        Backrooms.LOGGER.info("=== BILAN DES VARIANTS UNIQUES PAR PATTERN ===");
+
+        // On utilise un HashSet pour éliminer automatiquement les doublons
+        Map<String, Set<String>> patternsToRooms = new HashMap<>();
+
+        for (ModuleInfo piece : catalogue) {
+            // On fusionne les 4 signatures pour créer l'empreinte de la pièce
+            String signature = piece.sigN + "_" + piece.sigS + "_" + piece.sigE + "_" + piece.sigO;
+            patternsToRooms.computeIfAbsent(signature, k -> new HashSet<>()).add(piece.nomDeBase);
+        }
+
+        patternsToRooms.forEach((pattern, rooms) -> {
+            int count = rooms.size();
+            Backrooms.LOGGER.info("Pattern [{}] : {} variante(s) -> {}", pattern, count, rooms);
+
+            if (count < 3) {
+                Backrooms.LOGGER.warn(" -> ⚠️ ALERTE : Manque de diversité (rajoute des rooms bordel) !");
+            }
+        });
     }
 }

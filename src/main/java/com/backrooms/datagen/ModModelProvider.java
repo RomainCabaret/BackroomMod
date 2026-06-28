@@ -26,6 +26,8 @@ public class ModModelProvider extends FabricModelProvider {
         // (les collisions custom gérées en Java fonctionneront toujours).
         blockStateModelGenerator.createTrivialCube(ModBlocks.PLAFOND_BUREAU);
         blockStateModelGenerator.createTrivialCube(ModBlocks.PLAFOND_LUMINEUX);
+        blockStateModelGenerator.createTrivialCube(ModBlocks.PLAFOND_LUMINEUX_ROUGE);
+
     }
 
     @Override
